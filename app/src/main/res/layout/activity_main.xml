@@ -29,4 +29,30 @@
         app:iconTint = "?colorOnPrimary"
         />
 
+
+<!--    <Button-->
+<!--        android:id="@+id/shareButton"-->
+<!--        android:layout_width="130dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:layout_marginBottom="13dp"-->
+<!--        android:text="Share" />-->
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_button"
+        android:paddingStart="16dp"
+        android:padding="5dp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:elevation="4dp" />
+
+
 </RelativeLayout>

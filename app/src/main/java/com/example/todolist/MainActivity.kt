@@ -1,7 +1,10 @@
 package com.example.todolist
 
+import android.content.Intent
+import android.content.Intent.createChooser
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,12 +26,24 @@ class MainActivity : AppCompatActivity(), TaskItemClickListener
         binding.newTaskButton.setOnClickListener {
             NewTaskSheet(null).show(supportFragmentManager, "newTaskTag")
         }
-        setRecyclerView()
+        setRecylcerView()
 
+
+        val shareButton = findViewById<Button>(R.id.shareButton)
+        shareButton.setOnClickListener {
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Folosesc aplicatia ToDoApp si sunt extrem de incantat!")
+
+            val chooserIntent = createChooser(shareIntent, "Partajați utilizând")
+            if (shareIntent.resolveActivity(packageManager) != null) {
+                startActivity(chooserIntent)
+            }
+        }
 
     }
 
-    private fun setRecyclerView() {
+    private fun setRecylcerView() {
         val mainActivity = this
         taskViewModel.taskItems.observe(this){
             binding.todoListRecyclerView.apply {
