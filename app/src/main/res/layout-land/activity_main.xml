@@ -8,44 +8,45 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/todoListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/todoListRecyclerView"
-        android:backgroundTint="@color/design_default_color_background"
-        />
+        android:layout_above="@id/newTaskButton"
+        android:backgroundTint="@color/design_default_color_background" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/newTaskButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "New Task"
-        android:id="@+id/newTaskButton"
-        android:backgroundTint="?attr/colorPrimary"
-        android:textColor="?colorOnPrimary"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="519dp"
+        android:layout_marginBottom="19dp"
         android:padding="5dp"
-        android:layout_margin="20dp"
+        android:text="New Task"
+        android:textColor="?colorOnPrimary"
+        app:backgroundTint="?attr/colorPrimary"
         app:icon="@drawable/baseline_add_24"
-        app:iconTint = "?colorOnPrimary"
-        />
-
-
+        app:iconTint="?colorOnPrimary" />
 
     <Button
         android:id="@+id/shareButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Share"
         android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="-601dp"
+        android:layout_marginBottom="12dp"
+        android:layout_toStartOf="@id/newTaskButton"
         android:background="@drawable/rounded_button"
-        android:paddingStart="16dp"
+        android:elevation="4dp"
         android:padding="5dp"
+        android:paddingStart="16dp"
+        android:text="Share"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:elevation="4dp" />
-
-
-
+        android:textColor="@android:color/white" />
 
 </RelativeLayout>
